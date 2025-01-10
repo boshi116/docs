@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 22
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "302"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -18,13 +19,17 @@ star: true
 
 # 又拍云存储
 
-UPYUN 存储服务，简称 USS
+UPYUN 存储服务，简称 USS，[**又拍云USS官网**](https://console.upyun.com/services/file/)
 
-## Bucket
 
-UPYUN 存储服务名称
 
-## Endpoint
+## **存储桶**
+
+**UPYUN 存储桶服务名称**
+
+
+
+## **Endpoint**
 
 加速域名（默认的测试域名或已绑定域名，不是CNAME域名）
 
@@ -33,26 +38,33 @@ UPYUN 存储服务名称
 又拍云提供的默认测试域名在部分网络环境下无法访问，且不支持https，建议使用自行绑定的域名
 
 
-## Operator name
+
+## **操作员名称**
 
 操作员名称
 
-## Operator password
+
+
+## **操作员密码**
 
 操作员密码
 
-## Root folder path
+
+
+## **根文件夹 ID**
 
 根路径，不填则默认为根目录。
 
-## Sign url expire
+
+
+## **签名链接有效期**
 
 签名下载地址的有效期默认为 4 小时。
 
 
 
 
-## 详情填写示意图
+## **详情填写示意图**
 
 ::: tip
 
@@ -68,11 +80,11 @@ UPYUN 存储服务名称
 
 
 
-### 默认使用的下载方式
+### **默认使用的下载方式**
 
 ```mermaid
 ---
-title: 默认使用的那种下载方式？
+title: 默认使用的哪种下载方式？
 ---
 flowchart TB
     style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff

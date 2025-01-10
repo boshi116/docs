@@ -17,6 +17,22 @@ export default defineUserConfig({
         // async: true,
       },
     ],
+    [
+      "link",
+      {
+        type: "text/css",
+        rel: "stylesheet",
+        href: "https://npm.elemecdn.com/font6pro@6.4.0/css/fontawesome.min.css",
+        media: "all"
+      }
+    ],
+    [
+      "link",
+      {
+        href: "https://npm.elemecdn.com/font6pro@6.4.0/css/all.min.css",
+        rel: "stylesheet"
+      }
+    ],
     // [
     //   "script",
     //   {
@@ -64,7 +80,12 @@ export default defineUserConfig({
       description: "AList v3的文档",
     },
   },
-
+  markdown: {
+    headers: {
+      level: [2, 3, 4, 5, 6]
+    }
+  },
+  
   theme,
   plugins: [
     docsearchPlugin({
@@ -88,6 +109,10 @@ export default defineUserConfig({
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
+    ),
+    "@theme-hope/modules/sidebar/components/Sidebar": path.resolve(
+      __dirname,
+      "./components/Sidebar.vue"
     ),
     "@Onedrive/Request": path.resolve(
       __dirname,
@@ -126,8 +151,18 @@ export default defineUserConfig({
       __dirname,
       "./components/aliyundrive/Callback.vue"
     ),
+    "@Wopan/Token": path.resolve(__dirname, "./components/wopan/Token.vue"),
     "@Pricing": path.resolve(__dirname, "./components/Pricing.vue"),
     "@Desktop": path.resolve(__dirname, "./components/Desktop.vue"),
     "@Changelog": path.resolve(__dirname, "./components/changelog/index.vue"),
+    "@Api": path.resolve(__dirname, "./components/api/index.ts"),
+    "@Dropbox/Request": path.resolve(
+      __dirname,
+      "./components/dropbox/Request.vue"
+    ),
+    "@Dropbox/Callback": path.resolve(
+      __dirname,
+      "./components/dropbox/Callback.vue"
+    ),
   },
 });

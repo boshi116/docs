@@ -1,6 +1,6 @@
 ---
 title: Storage
-icon: storage
+icon: iconfont icon-storage
 index: false
 dir:
   order: 3
@@ -10,3 +10,6 @@ dir:
 
 ### Find the description of the network disk you need to mount in the left directory list by yourself
 
+-----
+
+<AutoCatalog />

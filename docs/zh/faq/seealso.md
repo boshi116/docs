@@ -1,8 +1,8 @@
 ---
 # This is the title of the article
-title: See also
+title: 第三方参考
 # This is the icon of the page
-icon: eye
+icon: iconfont icon-eye
 # This control sidebar order
 order: 1
 # A page can have multiple categories
@@ -22,9 +22,9 @@ star: true
 
 > 第三方教程和信息可能已经过时和不正确，并且这里没有可用性的保证。
 
-[https://www.bilibili.com/video/BV1VK411f7xQ](https://www.bilibili.com/video/BV1VK411f7xQ)
+[https://space.bilibili.com/36411485/channel/collectiondetail?sid=686340](https://space.bilibili.com/36411485/channel/collectiondetail?sid=686340)
 
-[https://www.yuque.com/anwenya/alist](https://www.yuque.com/anwenya/alist)
+[https://anwen-anyi.github.io/](https://anwen-anyi.github.io/index/)
 
 [Google](https://www.google.com/search?q=alist)
 

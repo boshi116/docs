@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 3
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "302"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -26,78 +27,192 @@ Aliyundrive Open, using the official authorization API development.
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { api } from "@Api"
 const minutes = ref<string|number>("unknown")
 const max = ref<string|number>("unknown")
 const getLimit = async ()=>{
-  const resp = await fetch("https://api.nn.ci/alist/ali_open/limit")
+  const resp = await fetch(`${api()}/alist/ali_open/limit`)
   const res = await resp.json()
   minutes.value = res.minutes
   max.value = res.max
 }
 typeof fetch !== "undefined" && getLimit()
 </script>
+::: info Aliyundrive VIP
+
+**Aliyundrive VIP**：[https://www.alipan.com/cpx/member](https://www.alipan.com/cpx/member?userCode=MzAwMDM1&disableNav=YES)
+
+- <i class="fa-solid fa-lightbulb fa-bounce" style="color: orange;"></i> Click the link to get [**Coupon**](https://www.alipan.com/cpx/member?userCode=MzAwMDM1&disableNav=YES),  [**immediately buy**](https://www.alipan.com/cpx/member?userCode=MzAwMDM1&disableNav=YES) 
+
+<img src="https://r2.izyt.cc/ali/vip.png" alt="vip" style="zoom:30%;" />
+
+:::
 
 :::danger Read the precautions carefully
 
-1.  ==The refresh token obtained by this tool can only be used for **Aliyundrive open platform** storage mount method== 
+1. ==The refresh token obtained by this tool can only be used for **Aliyundrive open platform** storage mount method==
+
+   
+
 2. The token filled in when Alist is mounted should also be provided by this tool, and the previous acquisition method will not be available
+
+   
+
 3. Not applicable to others, but only for Alist
-4. If the same IP requests =={{ max }}== times within =={{ minutes }}== minutes, **TooManyRequests** will appear. :no_entry_sign:So please do not abuse:no_entry_sign:
-    - For example, a request is counted when saving/editing, and viewing a file or watching a video download is not counted.
-    - The number of times and time mentioned above are dynamic~
+
+   
+
+4. If the same IP requests =={{ max }}== times within =={{ minutes }}== minutes, **Too Many Requests** will appear. :no_entry_sign:So please do not abuse:no_entry_sign:
+   - and viewing files and watching video downloads is not counted，The number of times and time mentioned above are dynamic~
+   - New optimization: **will only refresh the token when the request finds that the token is expired, update restart editing if the token is still valid will not refresh.**
+
+   
+
+5. Online playback video reminder: **`ExceedCapacityForbidden`** error, the capacity exceeds restrictions, implements restrictions, needs to be expanded or deleted unnecessary file saving space to save space,[View details](#four、)
+
+   
+
+6. <i class="fa-solid fa-seal-exclamation fa-beat" style="color: #ff0000;"></i> **==Do not share the Alibaba cloud disk publicly, and the account is prohibited from being accessed by multiple IPs. If the account is frozen after sharing, you will be responsible for the consequences== <i class="fa-solid fa-seal-exclamation fa-beat" style="color: #ff0000;"></i>  After adding storage, please set up meta information and other measures in time to prevent the account from being frozen by {other people/crawlers} malicious [access/sharing]，Other cloud disks also need to be prevented from being frozen/banned**
+
+   
+
+7. It is prohibited to use Alibaba Cloud Disk to build distribution services including but not limited to **`picture bed, software bed`** and **`video external link to video website playback`**, as well as some non-standard usage methods not mentioned above. If you violate the rules and are `frozen/banned`, you will be responsible for the consequences and it cannot be lifted.
 
 :::
 
-## refresh token
+:::danger About Alibaba Cloud OAUTH verification API cannot be connected
+
+1. Since the original API `https://api.nn.ci` is blocked by SNI, resulting in the case that cannot be connected, two new APIs are provided for use:
+   - `https://api-cf.nn.ci` (A layer of Cloudflare)
+   - `https://api.xhofe.top` (LiaoNing multi -line， Sponsored by [Asia Cloud](https://www.asiayun.com/aff/QQCOOQKZ))
+
+2. You need to replace the OAUTH token link in the ALIYUNDRIVE_OPEN configuration to
+   - `https://api-cf.nn.ci/alist/ali_open/token`
+   - `https://api.xhofe.top/alist/ali_open/token`
+   - ![](/img/drivers/aliyun/aliyun_api.png)
+
+3. check the details：https://github.com/alist-org/alist/discussions/4572
+
+4. Can I create an authorized OAUTH verification API by themselves?
+    - You need to use your own developer account to build
+
+
+
+:::
+
+
+
+## **refresh token**
 
 Go to：**https://alist.nn.ci/tool/aliyundrive/request**
 
-#### Get example graph
+#### **Get example graph**
 
 **refresh_token** can be obtained in the following two ways
 
-:::tabs#alitoken
-
-@tab Go to login
-
-![token](/img/drivers/aliyun/token1.png)
-
-@tab Scan QrCoden
-
-![token](/img/drivers/aliyun/token2.png)
-
-:::
+<div class="image-preview">  
+    <img src="/img/drivers/aliyun/token1.png" alt="Go to login" title="Go to login"/>
+    <img src="/img/drivers/aliyun/token2.png" alt="Scan QrCode" title="Scan QrCode"/>
+</div>
 
 
+### **Root folder file_id**
 
-### Root folder file_id
+The default is `root`, which displays all cloud disk contents. If you only want to display the contents of a certain folder, you can change it to `file_id`
 
-Open the official website of Aliyundrive and click the string behind the url when you click into the folder you want to set, such as https://www.aliyundrive.com/drive/folder/5fe01e1830601baf774e4827a9fb8fb2b5bf7940
+Open the official website of Aliyundrive and click the string behind the url when you click into the folder you want to set, such as https://www.alipan.com/drive/folder/5fe01e1830601baf774e4827a9fb8fb2b5bf7940
 
 which is `5fe01e1830601baf774e4827a9fb8fb2b5bf7940`
 
 ![file_id](/img/drivers/aliyundrive.png)
 
+<br/>
 
 
-### Client id，Client secret
+
+### **Client id，Client secret**
 
 Normal users don’t need to fill in the blank. If they apply for official authorization, they can also use their own to fill in. If it is blank, the default is to use the one provided by Alist.
 
+- If you use your own developer account, the Oauth token link must also be modified, and you must also use your own developer account ID and secret key to obtain the refresh token.
+
+<br/>
 
 
-## Remove way
+
+## **Rapid upload**
+
+- **v.3.22.1** version New add
+
+It is Rapid upload. When adding the driver, you need to check Rapid upload to enable it. The premise of Rapid upload is that the Aliyun disk already has this file before you can perform Rapid upload, otherwise it is a normal upload.
+
+Rapid upload calculates the `sha1` value of the file (should be correct), you don’t need to calculate it, you just need to upload it and upload it, it will automatically calculate it for you and upload it
+
+- The interface provided by the official API of Alibaba Cloud Disk is used, check :point_right: [**Rapid upload logic**](https://www.yuque.com/aliyundrive/zpfszx/ezlzok#y7lyH)
+
+-----
+
+- **v.3.27.0** version enhanced Rapid upload: you can directly transfer files with `115 network disk` by copying
+  - The premise is that the file to be transferred from the Alibaba Cloud disk to 115 in seconds, 115 already exists, otherwise it is a normal copy task.
+  - If you want to transfer 115 cloud disk files to Alibaba Cloud Disk in seconds, you need to turn on the Rapid upload option of Alibaba Cloud Disk, otherwise it will be uploaded in normal mode.
+
+If you want to upload files using Second Transmission, it is recommended to build an AList locally on your home computer and add a `Local Storage` and `Alibaba Cloud Disk` to copy Second Transmission to save resources.
+
+<br/>
+
+
+
+## **Remove way**
+
+If you don’t set it, it will be deleted to the recycle bin by default. If there is not enough space, you need to manually clean up the recycle bin. If you delete the wrong file, please go to the Alibaba Cloud Disk official website client to retrieve and restore it.
 
 - Trash: Enter the cloud disk recycle bin after AList is deleted, which will occupy the cloud disk space, but it can be retrieved if it is deleted by mistake later.
-- Delete: Direct deletion will not stay in the recycle bin and will not take up cloud disk space, but if it is deleted by mistake later, it cannot be retrieved.
-  - Note: Please do not disclose the Token obtained by your Alibaba cloud disk Open. If you accidentally leak it, please immediately go to [**Other instructions ¹**](#Open%20Alibaba%20Cloud%20Disk%20APP%20-->%20My%20-->%20Settings%20gear%20in%20the%20upper%20right%20corner%20-->%20Privacy%20Settings%20-->%20Authorization%20Management%20-->%20Click%20AList%20to%20view) to deauthorize to protect the security of your account. After 2 hours after deauthorization (recommended more Wait a few hours before authorizing to obtain Token)
+- Delete: direct deletion will not stay in the recycle bin, and will not occupy cloud disk space, but if deleted by mistake later, it cannot be retrieved.
+  - Note: Please do not disclose the Token obtained by your Alibaba Cloud Disk Open, ==If you accidentally leak it, please immediately go to [**Other instructions¹**](#open-alibaba-cloud-disk-app-my-settings-gear-in-the-upper-right-corner-privacy-settings-authorization-management-click-alist-to-view) to deauthorize, and then re-scan the code to authorize a new refresh token , at the same time, all the previous acquisitions will become invalid after the authorization is deactivated, so as to protect the security of your account==
+
+<br/>
 
 
 
+## **Drive type**
 
-## other instructions
+You can choose the type of cloud disk, and you can choose a different type according to your needs. You can set it when adding a driver using AList of v3.25.1 and above. The default is the `default` type
 
-one、
+- **default**: Have Intelligeent level users default to `Non-backup files`, No Have Intelligent User's default display is` Backup file`
+
+- **Resource**: corresponding to `Non-backup files` of the cloud disk
+- **Backup**: corresponding to the `Backup file` of the cloud disk
+
+202407 --> After AliyunDrive is updated to `6.0` version, the backup disk is changed to backup files and all files are merged together, but in terms of OpenAPI, there is still a distinction between `Resource` and `Backup` types
+
+![](/img/drivers/aliyun/aliyun_type.png)
+
+<br/>
+
+
+
+## **Livp download format**
+
+That is, the IOS `live` photo cannot be downloaded because the non-IOS system cannot parse it, and now it needs `Jpeg` or `Mov` according to your own needs
+
+- Jpeg: is the cover shown in the `live` photo
+- Mov: Long press the video screen of the `live` photo
+
+
+
+## **Internal upload**
+
+If the server you deploy AList on is Aliyun ECS for Beijing area, turn on this switch to improve the upload speed. Do not turn on this switch for servers that do not meet the requirements, otherwise you will have problems with inability to upload.
+
+- **Internal upload** Can Alibaba Cloud ECS in non-Beijing areas be used? No, because Alibaba Cloud Disk is using object storage in the Beijing area
+
+<br/>
+
+
+
+## **other instructions**
+
+##### One、
 
 > AList only obtained cloud disk users (**name avatar¹**), (**access file permission²**) and (**write file permission³**), and did not obtain mobile phone number permission
 >
@@ -105,40 +220,48 @@ one、
 >
 > 1. **Prompt** when scanning the QR code to obtain the refresh token
 > 2. ###### Open **Alibaba Cloud Disk APP --> My --> Settings gear in the upper right corner --> Privacy Settings --> Authorization Management --> Click AList** to view
->     
->     - If you don't use it, you can manually cancel the permission at any time
+>
+>    - If you don't use it, you can manually cancel the permission at any time
 
-two、
+##### Two、
 
->By default, the built-in player of Aliyun Disk is used - **Aliyun Video Previewer**
+> By default, the built-in player of Aliyun Disk is used - **Aliyun Video Previewer**
 >
->The video uploaded to the cloud disk will be converted into an H.264 encoded video stream through the transcoding service. (The good thing is that IOS can play... well, it should be like this)
+> The video uploaded to the cloud disk will be converted into an H.264 encoded video stream through the transcoding service. (The good thing is that IOS can play... well, it should be like this)
 >
->- For videos newly uploaded to the cloud disk, only the first 30s of the video are pre-transcoded by default. Full video transcoding is triggered on first playback. The transcoded video will be cached, and re-transcoding is not required to trigger playback again.
->- Videos shorter than 30s will not trigger pre-transcoding, and will only start transcoding when they are played for the first time.
->- Real-time transcoding takes some time.
->- The picture quality are: LD|SD|HD|FHD|QHD
+> - For videos newly uploaded to the cloud disk, only the first 30s of the video are pre-transcoded by default. Full video transcoding is triggered on first playback. The transcoded video will be cached, and re-transcoding is not required to trigger playback again.
+> - Videos shorter than 30s will not trigger pre-transcoding, and will only start transcoding when they are played for the first time.
+> - Real-time transcoding takes some time.
+> - The picture quality are: LD|SD|HD|FHD|QHD
 
-three、
+##### Three、
 
-> - If the Alibaba cloud disk you mounted is Open, after restarting, reloading, and updating, you will find a prompt **TooManyRequests**
+> Q: Why can’t Alibaba Cloud Disk Open see files of the Office Family Bucket type?
 >
-> - Check whether your account exceeds the number mentioned in the note in the red prompt at the top, that is, the number of open Alibaba Cloud disks you added > =={{ max }}==
->
-> - The solution is to disable all the mounted Alibaba cloud disk Open, wait for =={{ minutes }}== minutes, and then click one by one to enable the number not to exceed =={{ max }}== times, and then wait =={{ minutes }}== After a few minutes, click to open again, and it will recover slowly.
->  - (Whispering reminder: If you have more than a dozen accounts, it’s okay, it’s not a big problem to restore =={{ max }}== one at a time. If you have 30 or 50 accounts, it is recommended that you restore about 4 each time , because it will help you refresh the refresh token every 2 hours, and it will also be called to prevent you from causing GG too many times...)
-> 
->
-> 
->- Another problem, if the Alibaba Cloud Disk Open you mounted is a cloud disk account, and then mounted different folders to the account and added multiple accounts, resulting in too many Alibaba Cloud Open accounts added, this is a good solution
->   - Solution: Go to the official page of Alibaba Cloud Disk and integrate all the folders you need to mount into one folder, then only mount the integrated folder, and then pass [**alias**](../advanced/alias.md) are mounted separately, just write one for each path, so that a single path can be mounted and displayed separately. Of course, you can also integrate multiple ones together, or use it directly. Example 3 to show different ones can also be
->
-> 
->
-> If you add more than =={{ max }}== to one account and one network disk, then you can only restore it slowly by starting.
+> A: ~~Because Aliyun disk has not opened the relevant API, it is temporarily unavailable to view~~ (please look forward to)
 
+##### Four、
 
-### The default download method used
+> Q：Unable to play Alibaba Cloud disk video online, prompt: **`ExceedCapacityForbidden`** error
+>
+> A：**User capacity exceeded**, playback restricted, need to expand or delete unnecessary files to free up space,The prompts of the Alist and Alibaba Cloud Drive APP are as shown below
+>
+> <img src="/img/drivers/aliyun/error.png" style="zoom:70%;" />
+
+##### Five、
+
+> Q: How to load subtitles?
+>
+> A: Aliyun Disk Open needs to use **Aliyun Video Previewer** player, and temporarily "**Only support transcoding mkv-encapsulated srt, vtt text format subtitles**"
+>
+> - Currently only supports transcoding eng, jpn, chi three languages, other languages will be lost
+
+##### Six、
+
+> Q: View video prompts in alipan `In the transcoding, please try again later` and linger prompts in AList: `failed link: failed get link: UserNotAllowedAccessResource:user not allowed access resource for violation`
+> A: The representative account has been frozen (in the past, it was unable to log in directly), Please look at the red content on the top
+
+### **The default download method used**
 
 ```mermaid
 ---

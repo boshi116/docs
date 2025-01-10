@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 10
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "302"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -18,19 +19,19 @@ star: true
 
 # 分秒帧
 
-## 访问令牌
+## **访问令牌**
 
 登录后可以在请求头中获取
 
 ![token](/img/drivers/mediatrack-token.png)
 
-## 项目编号
+## **项目编号**
 
 从官网网址获取：
 
 ![Project id](/img/drivers/mediatrack-projectid.png)
 
-## 根文件夹 ID
+## **根文件夹 ID**
 
 登录后从请求中获取
 
@@ -38,11 +39,11 @@ star: true
 
 
 
-### 默认使用的下载方式
+### **默认使用的下载方式**
 
 ```mermaid
 ---
-title: 默认使用的那种下载方式？
+title: 默认使用的哪种下载方式？
 ---
 flowchart TB
     style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff

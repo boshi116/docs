@@ -2,7 +2,7 @@
 # This is the title of the article
 # title: One-click Script
 # This is the icon of the page
-icon: code
+icon: iconfont icon-code
 # This control sidebar order
 order: 9
 # A page can have multiple categories
@@ -26,13 +26,13 @@ This step is only for users who need to modify the source code by themselves. If
 
 :::
 
-### Environmental preparation
-First, you need to have an environment of `git`, `nodejs`, `pnpm`, `golang>=1.19`, `gcc`
+### **Environmental preparation**
+First, you need to have an environment of `git`, `nodejs`, `pnpm`, `golang>=1.20`, `gcc`
 
-### Building the front end
-Use `git clone --recursive https://github.com/alist-org/alist-web.git` command to clone this project, execute `pnpm install && pnpm build` to get the target file in the dist directory
+### **Building the front end**
+Use `git clone --recurse-submodules https://github.com/alist-org/alist-web.git` command to clone this project, execute `pnpm install && pnpm build` to get the target file in the dist directory
 
-### Build the backend
+### **Build the backend**
 Clone https://github.com/alist-org/alist for this project, copy the `dist` directory of the previous step to the `public` directory under the project, and then:
 ```bash
 appName="alist"

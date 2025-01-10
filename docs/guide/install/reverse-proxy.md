@@ -2,7 +2,7 @@
 # This is the title of the article
 # title: One-click Script
 # This is the icon of the page
-icon: page
+icon: iconfont icon-page
 # This control sidebar order
 order: 11
 # A page can have multiple categories
@@ -23,7 +23,11 @@ The program listens to port 5244 by default. If you do `reverse proxy`, recommen
 
 > If you want to use a sub folder, refer to [reverse proxy with sub folder](../../faq/howto.md#how-to-reverse-proxy-with-sub-directory)
 
-### nginx
+:::tip Missing https or port / Can't Play video when reverse-proxy non-standard ports or enable https?
+You need to passed correct host header, refer to [#726](https://github.com/alist-org/alist/issues/726) [#1159](https://github.com/alist-org/alist/issues/1159) [#2429](https://github.com/alist-org/alist/issues/2429) [#3644](https://github.com/alist-org/alist/issues/3644) [#4181](https://github.com/alist-org/alist/issues/4181) [#4719](https://github.com/alist-org/alist/issues/4719)
+:::
+
+### **nginx**
 Add in the server field of the website configuration file
 ```nginx
 location / {
@@ -48,7 +52,13 @@ If you use the bt.cn, be sure to delete the following default configuration
 :::
 
 
-### Apache
+Disable Nginx caching in `/www/server/nginx/conf/proxy.conf` or the corresponding website configuration file. Otherwise, with the default configuration, when accessing large files, Nginx will attempt to cache the remote file locally first, resulting in playback failures.
+```conf
+proxy_cache cache_one; # Remove this line
+proxy_max_temp_file_size 0; # Add this line
+```
+
+### **Apache**
 Add the anti-generation configuration item ProxyPass under the VirtualHost field, such as:
 ```xml
 <VirtualHost *:80>
@@ -61,7 +71,7 @@ Add the anti-generation configuration item ProxyPass under the VirtualHost field
 </VirtualHost>
 ```
 
-### Caddy
+### **Caddy**
 Add the reverse_proxy configuration item reverse_proxy under the Caddyfile file, for example:
 ```xml
 :80 {
@@ -69,12 +79,24 @@ Add the reverse_proxy configuration item reverse_proxy under the Caddyfile file,
 }
 ```
 
-### A simple demonstration of setting up a reverse proxy in Pagoda
+## **Demonstration of Setting up Reverse Proxy in BT Panel**
 
-First create a new site, **Alist Launcher** does not matter whether it is in the site folder, and then add it as shown in the figure below.
+#### 1.Login to the BT panel and add a new website.
 
--  ==Also, if you want to use Pagoda to open **SSL(HTTPS)**, you need to add it before the reverse proxy, otherwise you cannot open SSL==
-  - If you have already added a reverse proxy, you can stop it first **(the one in the picture that turns on the proxy button can just turn it off)**, enable SSL and then turn on the reverse proxy
+![bt_new_website](/img/guide/reverse_proxy/bt_new_website.png)
 
+#### 2.Modify the website settings.
 
-![BT](https://alist-doc.nn.ci/assets/images/BT-Proxy-5913c3786afba1417362c71f0af73ea9.png)
+![bt_new_website_01](/img/guide/reverse_proxy/bt_new_website_01.png)
+
+#### 3.Remove the default panel code.
+
+![bt_delete_default_config_01](/img/guide/reverse_proxy/bt_delete_default_config_01.png)
+
+![bt_delete_default_config_02](/img/guide/reverse_proxy/bt_delete_default_config_02.png)
+
+#### 4.Add the reverse proxy.
+
+![bt_reverse_proxy](/img/guide/reverse_proxy/bt_reverse_proxy.png)
+
+> If you need to apply for an `SSL certificate`, you can first apply for the certificate in the `SSL` option, and then set up the reverse proxy. Alternatively, you can set up the reverse proxy first, disable the proxy function, apply for an `SSL` certificate, and then enable the proxy again.

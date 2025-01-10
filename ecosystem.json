@@ -1,0 +1,28 @@
+{
+  "official": [
+    { "type": "github", "repo": "alist-org/alist-proxy" },
+    { "type": "github", "repo": "alist-org/with_aria2" }
+  ],
+  "community": [
+    { "type": "github", "repo": "jinzhi0123/picgo-plugin-alist" },
+    { "type": "github", "repo": "sbwml/luci-app-alist" },
+    { "type": "github", "repo": "traceless/alist-encrypt" },
+    { "type": "github", "repo": "iranee/qnap-alist-webdav" },
+    { "type": "github", "repo": "yzbtdiy/alist_batch" },
+    { "type": "github", "repo": "msterzhang/onelist" },
+    { "type": "github", "repo": "moyanj/AList3SDK" },
+    { "type": "github", "repo": "lym12321/Alist-SDK" },
+    { "type": "github", "repo": "power721/alist-tvbox" },
+    { "type": "github", "repo": "everstu/Koolcenter_alist" },
+    { "type": "github", "repo": "jing332/AListFlutter" },
+    { "type": "github", "repo": "z-mio/Alist-bot" },
+    { "type": "github", "repo": "ShinChven/alist-aria2-pro-docker-compose" },
+    { "type": "github", "repo": "Kuingsmile/PicHoro" },
+    { "type": "github", "repo": "BFWXKJGS/AlistClient" },
+    { "type": "github", "repo": "xlist-io/xlist" },
+    { "type": "github", "repo": "j4587698/AListSdkSharp" },
+    { "type": "github", "repo": "ShiroNeri4u/Neribox" },
+    { "type": "github", "repo": "synctv-org/synctv" },
+    { "type": "github", "repo": "wy580477/Alist-EX-container" } 
+  ]
+}

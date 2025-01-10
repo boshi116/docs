@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 39
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "302"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -19,7 +20,7 @@ star: true
 
 **Trainbit** official website：https://trainbit.com/
 
-## AUSHELLPORTAL ，Apikey
+## **AUSHELLPORTAL ，Apikey**
 
 After entering the Trainbit webpage, press F12 to open the developer mode, open any refreshed data in the network option, and then find the one with the Cookie option.
 
@@ -31,7 +32,7 @@ After entering the Trainbit webpage, press F12 to open the developer mode, open 
 
 
 
-## Root folder id
+## **Root folder id**
 
 - `<directory ID>_<q parameter of directory uploadurl>`
 
@@ -39,20 +40,20 @@ We open the home page and press F12, open the developer mode, select the network
 
 - How to format: search your own browser for json online formatting
 
-## matters needing attention
+## **matters needing attention**
 
 1. If you uploaded from `AList` to `trainbit`, a `.delete_suffix` will be added after the file suffix, don’t worry
 2. The official website says that the free user files will be deleted after 15 days of downloading, but the files are not deleted now, just in case, do not store important files, and the files will be lost when the time comes
 
 
 
-## Fill in the example
+## **Fill in the example**
 
 ![Trainbit](/img/drivers/trainbit/Trainbit-1.png)
 
 
 
-### The default download method used
+### **The default download method used**
 
 ```mermaid
 ---

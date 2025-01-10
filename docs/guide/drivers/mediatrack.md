@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 10
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "302"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -18,17 +19,17 @@ star: true
 
 # Mediatrack
 
-### Access token
+### **Access token**
 You can get it in request header after logging in
 
 ![token](/img/drivers/mediatrack-token.png)
 
-### Project id
+### **Project id**
 Get from official website url:
 
 ![Project id](/img/drivers/mediatrack-projectid.png)
 
-### Root folder id
+### **Root folder id**
 
 Get it from the request after logging in
 
@@ -36,7 +37,7 @@ Get it from the request after logging in
 
 
 
-### The default download method used
+### **The default download method used**
 
 ```mermaid
 ---

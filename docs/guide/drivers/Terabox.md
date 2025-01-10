@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 37
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "302"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -19,28 +20,57 @@ star: true
 # Terabox
 
 
-## refresh token
+## **refresh token**
 
-[**Click here to log in**](https://www.terabox.com/) to obtain a refresh token
+~~[**Click here to log in**](https://www.terabox.com/) to obtain a refresh token~~
 
-![terabox](/img/drivers/terabox/terabox1.png)
+Since F12 is currently disabled on the web page, we can first open F12 on another page and turn on the `Network` → `Preserve log` option.
 
-## Add method
+<img src="/img/drivers/terabox/terabox_f12.png" alt="f12" style="zoom:150%;" /><br/>
 
-![terabox](/img/drivers/terabox/terabox2.png)
+Then enter https://www.terabox.com in the address bar of this tab to enter the webpage, you can see the reserved request, and then find **`Cookie`** from the reserved request.
+
+![terabox](/img/drivers/terabox/terabox_cookie.png)
+
+<br/>
 
 
 
-#### Note: The default root file path is /
+## **Download api**
 
-- If you don't want to write to the root directory **/** you want to write to other directories
+**Download api needs to choose ==`Crack`==** ，before you can use ^(v3.29)^
+
+<br/>
+
+
+
+## **Root folder id**
+
+- Root folder id is `/`
 - Mount other single subdirectories, put a picture for reference
-   - <img src="/img/drivers/terabox/terabox3.png" alt="Demo" style="zoom:50%;" />
+   - <img src="/img/drivers/terabox/terabox3.png" alt="Demo"/>
+
+<br/>
 
 
 
+## **Download error using Proxy Url link**
 
-### The default download method used
+Using [**Proxy Url**](common.md#download-proxy-url) to download error
+
+```json
+{
+"error_code": 31211,
+"error_msg": "access denied"
+}
+```
+
+View specific reasons：**[https://github.com/alist-org/alist/issues/6508](https://github.com/alist-org/alist/issues/6508#issuecomment-2171762705)**
+
+<br/>
+
+
+### **The default download method used**
 
 ```mermaid
 ---

@@ -27,9 +27,9 @@ jobs:
 
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Install Deps
@@ -46,8 +46,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.MY_TOKEN }}
-          external_repository: alist-org/alist-org.github.io
-          publish_branch: main
+          # external_repository: alist-org/alist-org.github.io
+          publish_branch: gh-pages
           publish_dir: docs/.vuepress/dist
-          # cname: alist.nn.ci
+          cname: alist.nn.ci
 

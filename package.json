@@ -3,22 +3,35 @@
   "version": "3.0.0",
   "description": "Documentation for alist v3",
   "license": "AGPL-3.0",
+  "packageManager": "pnpm@7.9.5",
   "scripts": {
-    "docs:build": "vuepress build docs",
+    "ecosystem": "npx tsx scripts/ecosystem.ts",
+    "dev-build": "vuepress build docs",
+    "docs:build": "pnpm ecosystem && vuepress build docs",
     "docs:clean-dev": "vuepress dev docs --clean-cache",
-    "docs:dev": "vuepress dev docs"
+    "docs:dev": "vuepress dev docs",
+    "dev": "pnpm docs:dev"
   },
   "devDependencies": {
-    "@vuepress/client": "2.0.0-beta.60",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.60",
-    "@vuepress/utils": "2.0.0-beta.60",
-    "naive-ui": "^2.34.3",
-    "vue": "^3.2.27",
-    "vuepress": "2.0.0-beta.60",
-    "vuepress-theme-hope": "^2.0.0-beta.172",
-    "vuepress-vite": "2.0.0-beta.60"
+    "@types/node": "^18.18.10",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
+    "artplayer": "^5.1.1",
+    "dashjs": "^4.7.2",
+    "flowchart.ts": "^1.0.1",
+    "hls.js": "^1.4.12",
+    "mathjax-full": "^3.2.2",
+    "mermaid": "^10.6.1",
+    "mpegts.js": "^1.7.3",
+    "naive-ui": "^2.35.0",
+    "sass": "^1.69.6",
+    "vue": "^3.3.8",
+    "vuepress": "2.0.0-rc.0",
+    "vuepress-theme-hope": "2.0.0-rc.0",
+    "vuepress-vite": "2.0.0-rc.0"
   },
   "dependencies": {
-    "markdown-it": "^13.0.1"
+    "markdown-it": "^13.0.2"
   }
 }

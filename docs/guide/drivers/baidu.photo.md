@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 13
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "302"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -18,11 +19,13 @@ star: true
 
 # Moment album
 
-## Refresh token (same as Baidu Netdisk)
+## **Refresh token (same as Baidu Netdisk)**
 
 [Click here](https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=iYCeC9g08h5vuP9UqvPHKKSVrKFXGa1v&redirect_uri=https://alist.nn.ci/tool/baidu/callback&scope=basic,netdisk&qrcode=1) to get the refresh token.
 
-## album_id
+
+
+## **album_id**
 
 - **When the default is empty, all albums in the root directory will be displayed directly.**
 - If you want to mount a single album, you need to fill in the following content
@@ -34,10 +37,20 @@ star: true
   - https://photo.baidu.com/photo/web/album/4021858707431029901 
   - **4021858707431029901** is {album_id}
 
-- {tid}: Visit **https://photo.baidu.com/youai/album/v1/list** to get it.
+- {tid}: Visit **https://photo.baidu.com/youai/album/v1/list?limit=1000** to get it.
   - After entering the interface, `Ctrl+F` searches for the ID above, and you can see the corresponding {tid} in the following lines
 
-### The default download method used
+
+
+## **display type** 
+
+Choose according to your needs
+
+## **Delete origin**
+
+<i class="fa-solid fa-triangle-exclamation fa-lg" style="color: #ff0000;"></i>‪‪ ‪ By default, it just removes the album, not the real deletion. If you enable this option to delete the file, it will be completely deleted. Please enable it carefully.
+
+### **The default download method used**
 
 ```mermaid
 ---

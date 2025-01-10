@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 11
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "302"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -20,13 +21,13 @@ star: true
 
 Teambition project file, supports Chinese server and international server.
 
-### Cookies
+### **Cookies**
 
 After login, the validity period is unknown
 
 ![cookie](/img/drivers/teambition-cookie.png)
 
-### Project ID and root folder id
+### **Project ID and root folder id**
 
 Get it from the URL after logging in
 
@@ -34,7 +35,7 @@ Get it from the URL after logging in
 
 
 
-### The default download method used
+### **The default download method used**
 
 ```mermaid
 ---

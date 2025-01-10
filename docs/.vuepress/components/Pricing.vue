@@ -28,10 +28,11 @@ let data = {
     },
     {
       title: 'AList Desktop',
-      price: '＄8',
+      price: '＄9.99',
       features: [
         'All Open Source features',
         'Use a nice UI to manage the Alist program instead of the command line, and easily view logs',
+        'Mount all storages as a local disk',
         'The native start with system',
         'Automatically check for updates',
         'Quick view administrator information',
@@ -45,7 +46,7 @@ let data = {
         },
         {
           text: 'Buy',
-          link: 'https://ad.nn.ci',
+          link: 'https://store.nn.ci/checkout/buy/51dca247-20df-4991-8104-54ca534bcc82',
           type: 'success'
         }
       ]
@@ -100,6 +101,7 @@ if (location.pathname.startsWith("/zh/")) {
         features: [
           '所有开源功能',
           '使用好看的UI管理AList程序而不是命令行，方便的查看日志',
+          '将所有存储挂载为本地磁盘',
           '原生的开机自启',
           '自动检查更新',
           '快捷查看管理员信息',
@@ -113,7 +115,7 @@ if (location.pathname.startsWith("/zh/")) {
           },
           {
             text: '购买',
-            link: 'https://ad.nn.ci',
+            link: 'https://r.nn.ci/ad',
             type: 'success'
           }
         ]

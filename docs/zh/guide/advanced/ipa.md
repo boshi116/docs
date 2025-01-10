@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: mini-app
+icon: iconfont icon-mini-app
 # This control sidebar order
 order: 8
 # A page can have multiple categories
@@ -20,7 +20,7 @@ star: true
 
 
 
-## 1.IPA原生安装
+## **1.IPA原生安装**
 
 直接上传 ipa 文件即可。
 
@@ -34,7 +34,7 @@ star: true
 
 
 
-### Tips
+### **Tips**
 
 - ==.ipa安装 需要 https 和 有效的证书== ，不是随便一个包上传上去没签名就能安装的
 - 爱思助手签名的无法使用在线安装，只能使用爱思助手安装（经群友测试）
@@ -43,18 +43,13 @@ star: true
 
 @tab 电脑版如何改名
 
-<ArtPlayer 
-  src="https://hub.onmicrosoft.cn/public/video/wechat?wxv=wxv_2786278463950405640&raw=true" 
-  poster="/img/advanced/video.png"
-/>
+<BiliBili bvid="BV1bT411N7tT" ratio="16:9" low-quality no-danmaku />
 
 **视频若失效可以前往观看：https://b23.tv/oLvHHC8**
 
 @tab IOS 16手机如何改名
 
-<ArtPlayer 
-  src="https://hub.onmicrosoft.cn/public/video/weibo?uid=7821998556&cursor=4871961534007938&raw=true" 
-/>
+<BiliBili bvid="BV1kX4y1X7vo" />
 
 **视频若失效可以前往观看：https://b23.tv/GxGG8Dn**
 
@@ -66,35 +61,43 @@ star: true
 
 - **安装演示使用环境**： IOS15.4.1 iPhone12PM，个人证书，HTTPS
 
-<ArtPlayer 
-  src="https://hub.onmicrosoft.cn/public/video/weibo?uid=7821998556&cursor=4870951244144255&raw=true" 
-/>
+<ArtPlayer src="https://r2.izyt.cc/ios/ios_ts.m3u8" />
 
 
 
-## 2. TrollStore(巨魔)安装
+## **2. TrollStore(巨魔)安装**
 
- ==需要AList版本 ≥ 3.12.2 及以上==
+ ==需要AList版本 ≥ 3.12.2 及以上==，支持安装TrollStore(巨魔)的设备（不含越狱设备）
 
-支持安装TrollStore(巨魔)的设备（不含越狱设备）
+已经支持更多设备请查看下方表格，图表内容来自 [**TrollStore**](https://github.com/opa334/TrollStore)
 
-最高到iPhone13系列设备系统版本不大于 `稳定版15.4.1` `测试版15.6 beta 1 - 5 `
+图表信息可能更新不及时可以前往查看  <i class="fa-regular fa-hand-point-right" style="color: #B197FC;"></i> https://ios.cfw.guide/installing-trollstore
 
-如果你是iPhone14直接没戏啦出厂系统版本太高啦，详情查看下方表格
+|       开始        |       截止        |                        **arm64 (A8)**                        |                        arm64 (A9-A11)                        |                    arm64e (A12-A17/M1-M2)                    |
+| :---------------: | :---------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 14.0 beta 1及更早 | 14.0 beta 1及更早 |                            不支持                            |                            不支持                            |                            不支持                            |
+|    14.0 beta 2    |      14.8.1       | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|       15.0        |    15.5 beta 4    | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|       15.5        |       15.5        | [TrollInstallerMDC](https://ios.cfw.guide/installing-trollstore-trollinstallermdc) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|    15.6 beta 1    |    15.6 beta 3    | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|    15.6 beta 4    |      15.6.1       | [TrollInstallerMDC](https://ios.cfw.guide/installing-trollstore-trollinstallermdc) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|       15.7        |      15.7.1       | [TrollInstallerMDC](https://ios.cfw.guide/installing-trollstore-trollinstallermdc) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) |
+|      15.7.2       |      15.8.2       | [TrollMisaka](https://ios.cfw.guide/installing-trollstore-trollmisaka) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) |
+|    16.0 beta 1    |    16.0 beta 3    |                        Not Applicable                        | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|    16.0 beta 4    |      16.6.1       |                        Not Applicable                        | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) |
+|      16.7 RC      |      16.7 RC      |                        Not Applicable                        | [TrollHelper](https://ios.cfw.guide/installing-trollstore-trollhelper) |                         **即将发布**                         |
+|       16.7        |      16.7.8       |                        Not Applicable                        |                            不支持                            |                            不支持                            |
+|    17.0 beta 1    |    17.0 beta 4    |                        Not Applicable                        | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) |                         **即将发布**                         |
+|    17.0 beta 5    |       17.0        |                        Not Applicable                        | [TrollHelper](https://ios.cfw.guide/installing-trollstore-trollhelper) |                         **即将发布**                         |
+|   17.0.1及更高    |   17.0.1及更高    |                        Not Applicable                        |                            不支持                            |                            不支持                            |
 
-| Version / Device       | arm64 (A8 - A11)                                             | arm64e (A12 - A15, M1)                                       |
-| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 13.7 and below         | Not Supported (CT Bug only got introduced in 14.0)           | Not Supported (CT Bug only got introduced in 14.0)           |
-| 14.0 - 14.8.1          | [checkra1n + TrollHelper](https://github.com/opa334/TrollStore/blob/main/install_trollhelper.md) | [TrollHelperOTA (arm64e)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_arm64e.md) |
-| 15.0 - 15.4.1          | [TrollHelperOTA (iOS 15+)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_ios15.md) | [TrollHelperOTA (iOS 15+)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_ios15.md) |
-| 15.5 beta 1 - 4        | [TrollHelperOTA (iOS 15+)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_ios15.md) | [TrollHelperOTA (iOS 15+)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_ios15.md) |
-| 15.5 (RC)              | Not Supported (CT Bug fixed)                                 | Not Supported (CT Bug fixed)                                 |
-| 15.6 beta 1 - 5        | [SSH Ramdisk](https://github.com/opa334/TrollStore/blob/main/install_sshrd.md) | [TrollHelperOTA (arm64e)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_arm64e.md) |
-| 15.6 (RC1/2) and above | Not Supported (CT Bug fixed)                                 | Not Supported (CT Bug fixed)                                 |
+<span><a href="https://www.alipan.com/s/Z3mrsfdFY5h"><i class="fa-solid fa-party-horn fa-shake" style="color: #74C0FC;"></i> IPA Resources</a></span> :gift:
+
+<br/>
 
 
 
-### 安装示例
+### **安装示例**
 
 如果你要使用安装很简单，点击 **TrollStore(巨魔)** 按钮即可安装
 
@@ -102,7 +105,7 @@ star: true
 
 
 
-### 其他说明
+### **其他说明**
 
 1. 如果你点击 **TrollStore(巨魔)** 按钮后打开的是 Apple的放大镜是因为如下原因
    - 你的 `TrollStore` 版本号小于1.3+版本，建议直接更新到最新版

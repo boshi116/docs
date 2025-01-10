@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 28
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "Native Rroxy"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -31,7 +32,7 @@ Wait for the more detailed tutorials to be supplemented after the relevant equip
 
 
 
-### The default download method used
+### **The default download method used**
 
 
 ```mermaid
@@ -44,7 +45,7 @@ flowchart TB
     subgraph ide1 [ ]
     c1
     end
-    c1[local proxy]:::someclass==default==>a2[user equipment]
+    c1[local proxy]:::someclass==default===>a2[user equipment]
     classDef someclass fill:#f96
     b1[Download proxy URL]-.alternative.->a2[user equipment]
     click b1 "../drivers/common.html#webdav-policy"

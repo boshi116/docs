@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: token
+icon: iconfont icon-token
 # This control sidebar order
 order: 5
 # A page can have multiple categories
@@ -24,14 +24,32 @@ Then login to ALIST manage and goto `Profile` page, click `Enable 2FA` button, s
 
 Finally, click `Verify` button to enable 2FA.
 
+- Each user can set a different "2FA" verification, how to cancel see the method below
 
+<br/>
 
 ## **How to cancel 2FA verification:**
 
-  How to enter the folder where Alist is located
+one、(≥ v3.15.0)
 
- - 1. **Windows**: Go to the folder where Alist is located and enter: **alist.exe cancel2fa**
- - 2. **Linux**: Enter the folder where Alist is located and input, **./alist cancel2fa**
- - 3. **docker**: docker directly input **docker exec -it alist ./alist cancel2fa**
+>If you forget the 2FA of your non-Admin account, you can tell the administrator to clear it for you
+>
+> Enter the background --> user, click "cancel two-step verification"
+>
+> If the 2FA of the admin account is lost, please see the second step how to clear 2FA
 
-  **After the above input is deleted, it is found that there is still a restart~**
+two、  
+
+> How to enter the folder where Alist is located
+>
+> - 1. **Windows**: Go to the folder where Alist is located and enter: **alist.exe cancel2fa**
+> - 2. **Linux**: Enter the folder where Alist is located and input, **./alist cancel2fa**
+> - 3. **docker**: docker directly input **docker exec -it alist ./alist cancel2fa**
+>
+>  **After the above input is deleted, it is found that there is still a restart~**
+
+three、(>3.30.0)
+
+> Open the manage user page, you can see the option of the `Cancel 2FA`. After the cancellation, if you still have 2FA, you can choose to restart the Alist
+>
+> - You need to use the new version, if there is no option of the `Cancel 2Fa`，Explain that you need to update the version

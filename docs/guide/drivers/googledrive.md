@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 14
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "Native Rroxy"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -19,15 +20,29 @@ star: true
 # Google Drive
 
 Support team disk
-### Get client_id, client_secret, refresh_token
+### **Get client_id, client_secret, refresh_token**
 Refer to https://alist.nn.ci/tool/google/request
 
-### Root directory file_id
+### **Root directory file_id**
 Similar to Aliyundrive, the last string of the official website URL, such as:
 
 ![google](/img/drivers/googledrive.png)
 
-## Detailed Text Tutorial
+### **refresh_token [Google Service Account/SA]**
+> You will be allowed to use Google Service Account/SA to access files in your Google Drive in v3.17.0 and later versions. 
+
+> Simply fill in the **refresh_token** field with the **path to the SA file** or the **folder where it is located** to access your Google Drive using the Google Service Account/SA.
+
+The following methods will be allowed(recommend 1st):
+  - `/accounts` This method will automatically use all SA files in that folder. 
+  - `/accounts/the_sa_file.json` 
+
+As in the example above, all **paths must be absolute**, and the SA file name must also be ***.json** 
+
+#### **Generate your SA file**
+> For generating SA files, you can see the following link, [xyou365/AutoRclone](https://github.com/xyou365/AutoRclone/blob/master/Readme.md "AutoRclone")
+
+## **Detailed Text Tutorial**
 
 ::: warning matters needing attention
 
@@ -103,7 +118,7 @@ The left side is mounted by Alist, and the right side is the contents of Google 
 
 
 
-### The default download method used
+### **The default download method used**
 
 
 ```mermaid
@@ -116,7 +131,7 @@ flowchart TB
     subgraph ide1 [ ]
     c1
     end
-    c1[local proxy]:::someclass==default==>a2[user equipment]
+    c1[local proxy]:::someclass==default===>a2[user equipment]
     classDef someclass fill:#f96
     b1[Download proxy URL]-.alternative.->a2[user equipment]
     click b1 "../drivers/common.html#webdav-policy"

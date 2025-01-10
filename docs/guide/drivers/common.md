@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 1
 # A page can have multiple categories
@@ -18,32 +18,55 @@ star: true
 
 # Common
 
-### Mount Path
+### **Mount Path**
 
 Unique identifier, that is the location you want to mount to, if you want to mount to the root directory, it is `/`
 
-### Order
+### **Order**
 
 When there are multiple accounts, it is used for sorting, The smaller the more forward
 
-### Remark
+### **Remark**
 
 Anything you want to fill in, which is just for reminding you what this storage is
 
-### Cache Expiration
+## **Enable signing**
+
+Sign and encrypt files (no password required), only valid for this driver, if other signatures are not enabled and `signature all` and `meta-information encryption` are not set, others will not be signed
+
+Usage scenario: I don't want to enable all signatures, and I don't want to set metadata encryption. I just want to sign and encrypt a certain driver to prevent it from being scanned.
+
+Scope of influence: `Settings-->Global-->Signature All` > `Metainformation Directory Encryption` > `Single Driver Signature`
+
+### **Cache Expiration**
+
 Cache time of directory structure.
 
-### Web proxy
+### **Web proxy**
 
 Whether the web preview,download and the direct link go through the transfer. If you open this, recommended you set [site_url](../../config/configuration.md#site_url) so that alist can works fine.
 
-### Webdav policy
+-----
+
+- Web proxy Strategies ：It is a strategy when using the webpage. The default is a local agent. If you fill in the proxy URL and enable the web agent to use the proxy URL
+- Webdav policy Strategies：It is an option to use the webdav function
+  - If there are 302 options default to 302, if there is no 302 option default to the local agent, if you want to use the agent URL, please fill in and manually switch to the proxy URL strategy
+
+The two are different configurations
+
+### **Webdav policy**
 
 - 302 redirect: redirect to the real link
 - use proxy URL: redirect to proxy URL
 - native proxy: return data directly through local transit(best compatibility)
 
-### Description of three modes
+-----
+
+- 302 redirect：Although it does not consume traffic, it is not recommended to share and use it.
+- use proxy URL：It will consume the traffic of the agent URL
+- native proxy：The traffic of the construction of Alist device will consume
+
+### **Description of three modes**
 ```flow
 1=>start: cloud disk
 2=>end: you
@@ -77,16 +100,21 @@ You can use `cloudflare workers` for proxy, just fill in the `cloudflare workers
 The workers code can be found at https://github.com/alist-org/alist-proxy/blob/main/alist-proxy.js. in:
 
 - ADDRESS: your Alist address, The protocol header must be added, and cannot be followed by /. Such as `https://pan.nn.ci`;
-- TOKEN: you can get in `Other settings` in your Alist manage page.
+- TOKEN: you can get in `Other settings` in your Alist manage page;
+- WORKER_ADDRESS: your worker address, which should normally be same as **Download proxy URL**.
 
-:warning: Cloudflare Workers free CDN supports domestic only **http80 port** and **https443 port**，From group friend test
+:warning: Cloudflare Workers free CDN only supports (regardless of domestic or foreign) **http80 port** and **https443 port**, from group friend test
 
 - When mounting the configuration in the Alist background, fill in the **download proxy URL** at the end of the link without `/`
+
+If you do n’t understand [**Disassembled for details**](https://anwen-anyi.github.io/index/11-durl.html)
 
 @tab Universal Binary
 You can also use another machine for proxying, download the program at https://github.com/alist-org/alist-proxy/releases
 
 `./alist-proxy -help` to see how to use it.
+
+If you don’t understand, there are detailed [**video tutorial**](https://www.bilibili.com/video/BV17N411S7fg/)
 
 ::::
 

@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 14
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "本地代理"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -20,17 +21,21 @@ star: true
 
 支持团队盘（根目录ID填写团队盘的目录ID）
 
-### 获取 client_id, client_secret, refresh_token
+
+
+### **获取 client_id, client_secret, refresh_token**
 
 参考 https://alist.nn.ci/tool/google/request
 
-### 根目录file_id
+
+
+### **根文件夹 ID**
 
 与阿里云盘类似，官网 URL 的最后一个字符串，如：
 
 ![google](/img/drivers/googledrive.png)
 
-## 详细文本教程
+## **详细文本教程**
 
 ::: warning 注意事项
 
@@ -54,7 +59,7 @@ star: true
 
 ![Google](/img/drivers/google/Google-2.png)
 
-点击 **`Google Driver API` **进去后，看下图示意图，将API服务启用
+点击 **`Google Driver API`** 进去后，看下图示意图，将API服务启用
 
 ![Google](/img/drivers/google/Google-3.png)
 
@@ -106,12 +111,12 @@ star: true
 
 
 
-### 默认使用的下载方式
+### **默认使用的下载方式**
 
 
 ```mermaid
 ---
-title: 默认使用的那种下载方式？
+title: 默认使用的哪种下载方式？
 ---
 flowchart TB
     style c1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
@@ -119,7 +124,7 @@ flowchart TB
     subgraph ide1 [ ]
     c1
     end
-    c1[本机代理]:::someclass==默认==>a2[用户设备]
+    c1[本机代理]:::someclass==默认===>a2[用户设备]
     classDef someclass fill:#f96
     b1[代理URL]-.备选.->a2[用户设备]
     click b1 "../drivers/common.html#webdav-策略"

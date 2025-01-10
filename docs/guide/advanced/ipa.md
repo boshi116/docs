@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: mini-app
+icon: iconfont icon-mini-app
 # This control sidebar order
 order: 8
 # A page can have multiple categories
@@ -20,7 +20,7 @@ star: true
 
 
 
-## 1. IPA native installation
+## **1. IPA native installation**
 
 You can directly upload the ipa file. 
 
@@ -32,7 +32,7 @@ Recommended to use [ipa-renamer](https://github.com/Xhofe/ipa-renamer) to rename
 
 - If you are a mobile phone user, you can also rename the IPA file, but you must know the format mentioned above, but there is no mobile phone renaming software, please solve it yourself...
 
-### Tips
+### **Tips**
 
 -  ==.ipa installation requires https and a valid certificate== , not just a package can be installed without a signature
 
@@ -40,18 +40,13 @@ Recommended to use [ipa-renamer](https://github.com/Xhofe/ipa-renamer) to rename
 
 @tab How to change the name of the computer version
 
-<ArtPlayer 
-  src="https://hub.onmicrosoft.cn/public/video/wechat?wxv=wxv_2786278463950405640&raw=true" 
-  poster="/img/advanced/video.png"
-/>
+<BiliBili bvid="BV1bT411N7tT" ratio="16:9" low-quality no-danmaku />
 
 **If the video fails, you can watch it here: https://b23.tv/oLvHHC8**
 
 @tab how to change the name of the IOS 16 mobile phone
 
-<ArtPlayer 
-  src="https://hub.onmicrosoft.cn/public/video/weibo?uid=7821998556&cursor=4871961534007938&raw=true" 
-/>
+<BiliBili bvid="BV1kX4y1X7vo"/>
 
 **If the video fails, you can watch it here:https://b23.tv/GxGG8Dn**
 
@@ -63,37 +58,45 @@ Recommended to use [ipa-renamer](https://github.com/Xhofe/ipa-renamer) to rename
 
 - **Installation demo environment**: IOS15.4.1 iPhone12PM, personal certificate, HTTPS
 
-<ArtPlayer 
-  src="https://hub.onmicrosoft.cn/public/video/weibo?uid=7821998556&cursor=4870951244144255&raw=true" 
-/>
+<ArtPlayer src="https://r2.izyt.cc/ios/ios_ts.m3u8" />
 
 
 
 
 
-## 2. TrollStore install
+## **2. TrollStore install**
 
- ==Requires AList version ≥ 3.12.2 and above==
+ ==Requires AList version ≥ 3.12.2 and above==，Devices that support the installation of TrollStore (jailbroken devices are not explained here)
 
-Devices that support the installation of TrollStore (jailbroken devices are not explained here)
+For more devices, please see the table below. The content of the chart comes from [**TrollStore**](https://github.com/opa334/TrollStore)
 
-The device that supports the installation of TrollStore is up to the iPhone 13 series device system version not greater than `stable version 15.4.1` `beta version 15.6 beta 1 - 5`
+Chart information update is uncertain, you can go to view <i class="fa-regular fa-hand-point-right" style="color: #B197FC;"></i>  https://ios.cfw.guide/installing-trollstore
 
-If you are an iPhone 14, the factory system version is too high. For other details, please check the table below.
+|          From          |           To           |                        **arm64 (A8)**                        |                        arm64 (A9-A11)                        |                    arm64e (A12-A17/M1-M2)                    |
+| :--------------------: | :--------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 14.0 beta 1and earlier | 14.0 beta 1and earlier |                         Unsupported                          |                         Unsupported                          |                         Unsupported                          |
+|      14.0 beta 2       |         14.8.1         | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|          15.0          |      15.5 beta 4       | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|          15.5          |          15.5          | [TrollInstallerMDC](https://ios.cfw.guide/installing-trollstore-trollinstallermdc) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|      15.6 beta 1       |      15.6 beta 3       | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|      15.6 beta 4       |         15.6.1         | [TrollInstallerMDC](https://ios.cfw.guide/installing-trollstore-trollinstallermdc) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|          15.7          |         15.7.1         | [TrollInstallerMDC](https://ios.cfw.guide/installing-trollstore-trollinstallermdc) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) |
+|         15.7.2         |         15.8.2         | [TrollMisaka](https://ios.cfw.guide/installing-trollstore-trollmisaka) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) |
+|      16.0 beta 1       |      16.0 beta 3       |                        Not Applicable                        | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollHelperOTA](https://ios.cfw.guide/installing-trollstore-trollhelperota) |
+|      16.0 beta 4       |         16.6.1         |                        Not Applicable                        | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) |
+|        16.7 RC         |        16.7 RC         |                        Not Applicable                        | [TrollHelper](https://ios.cfw.guide/installing-trollstore-trollhelper) |                       **Coming Soon**                        |
+|          16.7          |         16.7.8         |                        Not Applicable                        |                         Unsupported                          |                         Unsupported                          |
+|      17.0 beta 1       |      17.0 beta 4       |                        Not Applicable                        | [TrollInstallerX](https://ios.cfw.guide/installing-trollstore-trollinstallerx) |                       **Coming Soon**                        |
+|      17.0 beta 5       |          17.0          |                        Not Applicable                        | [TrollHelper](https://ios.cfw.guide/installing-trollstore-trollhelper) |                       **Coming Soon**                        |
+|    17.0.1 and later    |    17.0.1 and later    |                        Not Applicable                        |                         Unsupported                          |                         Unsupported                          |
 
-| Version / Device       | arm64 (A8 - A11)                                             | arm64e (A12 - A15, M1)                                       |
-| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 13.7 and below         | Not Supported (CT Bug only got introduced in 14.0)           | Not Supported (CT Bug only got introduced in 14.0)           |
-| 14.0 - 14.8.1          | [checkra1n + TrollHelper](https://github.com/opa334/TrollStore/blob/main/install_trollhelper.md) | [TrollHelperOTA (arm64e)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_arm64e.md) |
-| 15.0 - 15.4.1          | [TrollHelperOTA (iOS 15+)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_ios15.md) | [TrollHelperOTA (iOS 15+)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_ios15.md) |
-| 15.5 beta 1 - 4        | [TrollHelperOTA (iOS 15+)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_ios15.md) | [TrollHelperOTA (iOS 15+)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_ios15.md) |
-| 15.5 (RC)              | Not Supported (CT Bug fixed)                                 | Not Supported (CT Bug fixed)                                 |
-| 15.6 beta 1 - 5        | [SSH Ramdisk](https://github.com/opa334/TrollStore/blob/main/install_sshrd.md) | [TrollHelperOTA (arm64e)](https://github.com/opa334/TrollStore/blob/main/install_trollhelperota_arm64e.md) |
-| 15.6 (RC1/2) and above | Not Supported (CT Bug fixed)                                 | Not Supported (CT Bug fixed)                                 |
+<span><a href="https://www.alipan.com/s/Z3mrsfdFY5h"><i class="fa-solid fa-party-horn fa-shake" style="color: #74C0FC;"></i> IPA Resources</a></span> :gift:
+
+<br/>
 
 
 
-### Installation example
+### **Installation example**
 
 If you want to use the installation is very simple, click the **TrollStore* button to install
 
@@ -101,7 +104,7 @@ If you want to use the installation is very simple, click the **TrollStore* butt
 
 
 
-### other instructions
+### **other instructions**
 
 1. If you click the **TrollStore** button to open Apple's magnifying glass, it is because of the following reasons
 

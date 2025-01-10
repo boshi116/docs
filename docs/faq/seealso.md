@@ -2,7 +2,7 @@
 # This is the title of the article
 title: See also
 # This is the icon of the page
-icon: eye
+icon: iconfont icon-eye
 # This control sidebar order
 order: 1
 # A page can have multiple categories
@@ -18,13 +18,13 @@ sticky: true
 star: true
 ---
 
-### The following resources may help you
+### **The following resources may help you**
 
 > Third party tutorials and information may be outdated and incorrect, and no warranty of availability is made here.
 
-[https://www.bilibili.com/video/BV1VK411f7xQ](https://www.bilibili.com/video/BV1VK411f7xQ)
+[https://space.bilibili.com/36411485/channel/collectiondetail?sid=686340](https://space.bilibili.com/36411485/channel/collectiondetail?sid=686340)
 
-[https://www.yuque.com/anwenya/alist](https://www.yuque.com/anwenya/alist)
+[https://anwen-anyi.github.io/](https://anwen-anyi.github.io/index/)
 
 [Google](https://www.google.com/search?q=alist)
 

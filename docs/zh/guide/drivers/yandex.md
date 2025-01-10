@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: state
+icon: iconfont icon-state
 # This control sidebar order
 order: 36
 # A page can have multiple categories
@@ -10,6 +10,7 @@ category:
 tag:
   - Storage
   - Guide
+  - "302"
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
@@ -18,17 +19,17 @@ star: true
 
 # Yandex云盘
 
-### 刷新令牌
+### **刷新令牌**
 [点击这里](https://oauth.yandex.com/authorize?response_type=code&client_id=a78d5a69054042fa936f6c77f9a0ae8b) 来获取刷新令牌。
 
-### 根文件夹路径
+### **根文件夹ID**
 要挂载的根文件夹，默认为 `/`
 
-### 默认使用的下载方式
+### **默认使用的下载方式**
 
 ```mermaid
 ---
-title: 默认使用的那种下载方式？
+title: 默认使用的哪种下载方式？
 ---
 flowchart TB
     style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff

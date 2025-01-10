@@ -1,6 +1,6 @@
 ---
 # This is the icon of the page
-icon: preview
+icon: iconfont icon-preview
 # This control sidebar order
 order: 7
 # A page can have multiple categories
@@ -18,27 +18,27 @@ star: true
 
 # 预览设置
 
-## 文本类型
+## **文本类型**
 
 要作为文本预览的文件扩展名，用 `,` 分隔，例如 `txt,md,go,tsx`。
 
-## 音频类型
+## **音频类型**
 
 要作为音频预览的文件扩展名，以 `,` 分隔，例如 `mp3,wav,m4a`。
 
-## 视频类型
+## **视频类型**
 
 要作为视频预览的文件扩展名，以 `,` 分隔，例如 `mp4,webm,ogg`。
 
-## 图片类型
+## **图片类型**
 
 要作为图像预览的文件扩展名，以 `,` 分隔，例如 `jpg,jpeg,png,gif,webp`。
 
-## 代理类型
+## **代理类型**
 
 要通过程序代理下载的文件扩展名
 
-## 外部预览
+## **外部预览**
 
 一个包含外部预览设置的 json 对象，定义为
 
@@ -54,8 +54,14 @@ interface {
 
 对于外部 url，我们提供了一些变量供您使用：
 
+基础变量：
+
 - `$url`: the file url
+- `$durl`: the file of alist URL
 - `$name`: the file name
+
+拓展变量：
+在基础变量前添加[eb_]，其中e表示`encodeURIComponent`，b表示`base64`， 如
 - `$e_url`: encodeURIComponent($url)
 - `$b_url`: btoa($url)
 - `$eb_url`: encodeURIComponent(btoa($url))
@@ -79,7 +85,7 @@ interface {
 
 ![Open-with](/img/config/open-with.png)
 
-## iframe 预览
+## **iframe 预览**
 
 类似于 `External previews`，但它会直接在当前页面中嵌入 iframe。
 :::tip
@@ -95,19 +101,35 @@ interface {
 
 :::
 
-## 音频封面
+## **音频封面**
 
 歌曲无播放封面时显示的默认封面。
 
-## 音频自动播放
+## **音频自动播放**
 
 是否自动播放音频文件。
 
-## 视频自动播放
+## **视频自动播放**
 
 是否自动播放视频文件。
 
-## 代理忽略头部
+## **代理忽略头部**
 
 详情查看： **https://github.com/alist-org/alist/issues/2763**
 
+### **强制预览**
+
+可以通过 `type` 请求参数来强制设置预览类型。
+
+可选值:
+
+```
+UNKNOWN
+FOLDER
+VIDEO
+AUDIO
+TEXT
+IMAGE
+```
+
+示例: `http://yourdomain/test-file.ahk?type=text`
